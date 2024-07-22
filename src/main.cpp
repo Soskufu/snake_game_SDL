@@ -1,7 +1,6 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <deque>
 
 bool running = true;
@@ -72,10 +71,10 @@ void logic(int &move)
 {
 	switch(move)
 		{
-			case down: head.y += 10; break;
-			case up: head.y -= 10; break;
-			case left: head.x -= 10; break;
-			case right: head.x += 10; break;
+			case down: head.y += 8; break;
+			case up: head.y -= 8; break;
+			case left: head.x -= 8; break;
+			case right: head.x += 8; break;
 		};
 }
 void update(int &move) {    
@@ -99,10 +98,10 @@ void update(int &move) {
 	while(Snakebody.size() > size)
 	Snakebody.pop_back();
     
-    if (head.x < 0) startover(move);//head.x +=1000;
-    if (head.x > 1000) startover(move);//head.x -=1000;
-    if (head.y < 0) startover(move); //head.y +=1000;
-    if (head.y > 1000) startover(move); //head.y -=1000;
+    if (head.x < 0)  startover(move);////head.x +=1000;
+    if (head.x > 1000)  startover(move);//head.x-=1000;
+    if (head.y < 0)  startover(move); //head.y +=1000;
+    if (head.y > 1000)  startover(move); //head.y-=1000;
 }
 
 int WinMain(int argc,char* args[])
